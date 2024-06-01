@@ -1,0 +1,26 @@
+
+.box {
+    display: block;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px 0;
+    padding: 4px;
+    color: #d4c600;
+    
+    h3 {
+        display: inline-block;
+        color: #c8c6a1;
+    }
+
+    .box_item {
+        display: flex;
+        justify-content: space-between;
+
+        .box_item_2 {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+    }
+}
