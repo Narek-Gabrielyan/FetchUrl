@@ -1,4 +1,4 @@
 
 export default function Todos() {
-  return <div>todos</div>;
+  return <div>Todos</div>;
 }

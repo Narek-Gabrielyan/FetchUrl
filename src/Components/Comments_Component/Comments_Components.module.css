@@ -1,0 +1,13 @@
+
+.container {
+    background-color: rgb(209, 209, 209);
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 4px;
+    min-height: 80px;
+
+    .first {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -13,6 +13,7 @@ import UsersPage from "./Components/Pages/UsersPage/UsersPage.jsx";
 // **** Dynamic parameters function **** //
 import { Posts_Element } from "./Components/Dynamic_Parameters/Posts_Element/Posts_Element.jsx";
 import { Users_Element } from "./Components/Dynamic_Parameters/Users_Element/Users_Element.jsx";
+import { Comments_Element } from "./Components/Dynamic_Parameters/Comments_Element/Comments_Element.jsx";
 // **** CSS **** //
 import "./App.css";
 
@@ -31,6 +32,8 @@ export default function App() {
             <Route path="*" element={"not found"} />
             {/* Dynamic Parameters */}
             <Route path="/posts/:id" element={<Posts_Element />} />
+            <Route path="/:id" element={<Users_Element />} />
+            <Route path="/comments/:id" element={<Comments_Element />} />
           </Route>
         </Routes>
       </div>

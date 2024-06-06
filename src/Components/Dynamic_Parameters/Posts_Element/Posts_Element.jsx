@@ -9,36 +9,23 @@ import { Tag_Span } from "../../Tag_Span/Tag_Span";
 import cssPost_item from "./Posts_Element.module.css";
 
 export const Posts_Element = function () {
-  const dynamic_url = useRequest("posts");
   const { id } = useParams();
-  const product = dynamic_url.find((product) => product.id === +id);
+  const posts = useRequest(`posts/${id}`);
   const nav = useNavigate();
   const back = () => nav(-1);
 
   return (
-    product && (
+    posts && (
       <div className={cssPost_item.box}>
         <div className={cssPost_item.box_item}>
-          <Tag_Span
-            keys={Object.keys(product)[2]}
-            values={Object.values(product)[2]}
-          />
+          <Tag_Span keys="title" values={posts.title} />
           <div className={cssPost_item.box_item_2}>
-            <Tag_Span
-              keys={Object.keys(product)[0]}
-              values={Object.values(product)[0]}
-            />
-            <Tag_Span
-              keys={Object.keys(product)[1]}
-              values={Object.values(product)[1]}
-            />
+            <Tag_Span keys="userId" values={posts.userId} />        
+            <Tag_Span keys="id" values={posts.id} />
           </div>
         </div>
-        <Tag_Span
-          keys={Object.keys(product)[3]}
-          values={Object.values(product)[3]}
-        />
-        <div style={{textAlign: "center"}}>
+        <Tag_Span keys="body" values={posts.body} />
+        <div style={{ textAlign: "center" }}>
           <button className={cssPost_item.click} onClick={back}>
             Go Back
           </button>

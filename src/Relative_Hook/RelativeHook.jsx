@@ -10,6 +10,7 @@ export default function useRequest(endpoint) {
         // response.status === 200 ? response.json() : console.error("Invalid URL")
         response.json()
       )
+      .catch((err) => console.error(err))
       .then((response) => setData(response));
   }, []);
   return data || [];
