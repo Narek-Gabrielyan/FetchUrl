@@ -24,7 +24,7 @@ export const Comments_Element = function () {
         .delete(`/comments/${id}`)
         .then((res) => console.log(res.status, res.data));
     };
-
+  
   return (
     <div className={cssComm_item.element}>
       <Comments_Components com={comments} />

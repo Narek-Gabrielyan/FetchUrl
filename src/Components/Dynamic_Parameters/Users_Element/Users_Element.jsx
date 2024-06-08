@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { instance } from "../../../API/API";
 // **** Component **** //
 import { UsersPage_Components } from "../../Pages/UsersPage/UsersPage";
+// **** CSS **** //
+import cssUs_Elem from "./Users_Element.module.css"
 
 export const Users_Element = function () {
     const [users, setUsers] = useState([])
@@ -13,10 +15,14 @@ export const Users_Element = function () {
     useEffect(() => {
         instance.get(`/users/${id}`).then((res) => setUsers(res.data)).catch((err) => console.error(err))
     }, [])
-
-    console.log(users)
     
-    return (
-      <UsersPage_Components user={users} />
-  )
+  return (
+    <div className={cssUs_Elem.container}>
+      <UsersPage_Components
+        users={users}
+        address={users.address}
+        company={users.company}
+      />
+    </div>
+  );
 };
